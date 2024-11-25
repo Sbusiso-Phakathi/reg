@@ -12,7 +12,6 @@ export default function Main() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-  // const [data2, setData2] = useState([]);
   const [all, setAll] = useState([]);
   const [allids, setAllids] = useState([]);
   const [date, setDate] = useState(new Date());
@@ -22,7 +21,6 @@ export default function Main() {
   // const [searchResults, setSearchResults] = useState([]);
   const [isActive, setIsActive] = useState(false); 
   const [idcohort, setIdcohort] = useState(); 
-
   const [isCohortVisible, setIsCohortVisible] = useState(false); 
   const [isUp, setIsup] = useState(false); 
 
