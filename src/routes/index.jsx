@@ -26,11 +26,11 @@ function AppRoutes() {
       <Route path="/page0" element={<Page0 />} />
         {/* <Route path="/" element={<Page1 />} />
         <Route path="/Page3" element={<Page3 />} />
-        <Route path="Page4" element={<Page4 />} />
         <Route path="/Page5" element={<Page5 />} />
         <Route path="/Page7" element={<Page7 />} />
         <Route path="/Page8" element={<Page8 />} />
         <Route path="/Page9" element={<Page9 />} /> */}
+        <Route path="/" element={<Page21 />} />
         <Route path="/Page1" element={<Page1 />} />
         <Route path="/Page2" element={<Page2 />} />
         <Route path="Page4" element={<Page4 />} />
