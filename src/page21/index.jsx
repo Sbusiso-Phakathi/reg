@@ -22,6 +22,7 @@ export default function Main() {
   // const [searchResults, setSearchResults] = useState([]);
   const [isActive, setIsActive] = useState(false); 
   const [idcohort, setIdcohort] = useState(); 
+
   const [isCohortVisible, setIsCohortVisible] = useState(false); 
   const [isUp, setIsup] = useState(false); 
 

@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Main() {
-  
+
   const navigate = useNavigate();
+  const [CohortAdded, setCohortAdded] = useState(""); 
 
   const [formData, setFormData] = useState({
     cohortname: '',
@@ -30,12 +31,14 @@ export default function Main() {
       );
 
       console.log(response.data);
-      navigate('/page9', { replace: true,  state: response.data}); 
+      setCohortAdded(response.data.message)
+      // navigate('/page21', { replace: true,  state: response.data}); 
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
   return (
+    <div>{ CohortAdded == "" ?
     <div className='main-container12'>
       <div className='rectangle12' />
       <div className='shaper-full-logo12'>
@@ -64,6 +67,8 @@ export default function Main() {
           </div>
         </button>
       </form>
+    </div>: <div >You have successfully added a cohort, thank you.</div>
+      }
     </div>
   );
 }

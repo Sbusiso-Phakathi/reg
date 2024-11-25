@@ -30,49 +30,57 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {/* Days Present */}
-      <h2>No. Days Present</h2>
-      <BarChart width={600} height={300} data={employee_metrics}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="days_present" fill="#8884d8" />
-      </BarChart>
+      <div className="chart-item">
+        {/* Days Present */}
+        <h2>No. Days Present</h2>
+        <BarChart width={600} height={300} data={employee_metrics}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="days_present" fill="#8884d8" />
+        </BarChart>
+      </div>
 
-      {/* Cost to Company */}
-      <h2>Cost to Company (Minutes)</h2>
-      <BarChart width={600} height={300} data={employee_metrics}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="cost_to_company_minutes" fill="#82ca9d" />
-      </BarChart>
+      <div className="chart-item">
+        {/* Cost to Company */}
+        <h2>Cost to Company (Minutes)</h2>
+        <BarChart width={600} height={300} data={employee_metrics}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="cost_to_company_minutes" fill="#82ca9d" />
+        </BarChart>
+      </div>
 
-      {/* Attendance vs Day */}
-      <h2>Attendance vs Day</h2>
-      <LineChart width={600} height={300} data={attendance_per_day}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="employees_present" stroke="#8884d8" />
-      </LineChart>
+      <div className="chart-item">
+        {/* Attendance vs Day */}
+        <h2>Attendance vs Day</h2>
+        <LineChart width={600} height={300} data={attendance_per_day}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="employees_present" stroke="#8884d8" />
+        </LineChart>
+      </div>
 
-      {/* Daily Late Comers */}
-      <h2>Daily Late Comers</h2>
-      <LineChart width={600} height={300} data={daily_late_comers}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="late_comers" stroke="#82ca9d" />
-      </LineChart>
+      <div className="chart-item">
+        {/* Daily Late Comers */}
+        <h2>Daily Late Comers</h2>
+        <LineChart width={600} height={300} data={daily_late_comers}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="late_comers" stroke="#82ca9d" />
+        </LineChart>
+      </div>
     </div>
   );
 };
