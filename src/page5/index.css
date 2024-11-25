@@ -1,0 +1,196 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .main-container5 {
+    overflow: hidden;
+  }
+  
+  .main-container5,
+  .main-container5 * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container5 {
+    position: relative;
+    width: 440px;
+    height: 956px;
+    margin: 0 auto;
+    font-size: 0px;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .face-recognition5 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 206px;
+    height: 30px;
+    margin: 119px 0 0 116px;
+    color: #000000;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 7;
+  }
+  .image5 {
+    position: relative;
+    width: 362px;
+    height: 409px;
+    margin: 74px 0 0 39px;
+    background: url(../assets/images/person.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 1;
+    overflow: visible auto;
+    border-radius: 19px;
+  }
+  .flex-row-d5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 300px;
+    height: 83.6px;
+    margin: 55px 0 0 31px;
+    z-index: 4;
+  }
+  .group5 {
+    flex-shrink: 0;
+    position: relative;
+    width: 57.143px;
+    height: 83.6px;
+    background: url(../assets/images/topleft.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 4;
+    border-radius: 16px;
+  }
+  .group-15 {
+    flex-shrink: 0;
+    position: relative;
+    width: 57.143px;
+    height: 83.6px;
+    background: url(../assets/images/topright.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 3;
+    border-radius: 16px;
+  }
+  .ooui-success5 {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 26.4px 0 0 136px;
+    z-index: 8;
+    overflow: hidden;
+  }
+  .vector5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../assets/images/ok.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 9;
+  }
+  .flex-row-dc5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 300px;
+    height: 83.6px;
+    margin: 15.4px 0 0 31px;
+    z-index: 6;
+  }
+  .group-25 {
+    flex-shrink: 0;
+    position: relative;
+    width: 57.143px;
+    height: 83.6px;
+    background: url(../assets/images/bottomleft.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 6;
+    border-radius: 16px;
+  }
+  .group-35 {
+    flex-shrink: 0;
+    position: relative;
+    width: 57.143px;
+    height: 83.6px;
+    background: url(../assets/images/bottomright.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 5;
+    border-radius: 16px;
+  }
+  .face-recognised5 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 423px;
+    height: 40px;
+    margin: 60px 0 0 8px;
+    color: #000000;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+  }
+  .live5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: relative;
+    width: 232px;
+    height: 44px;
+    margin: 100px 0 0 90px;
+    padding: 9px 62px 9px 62px;
+    cursor: pointer;
+    background: rgba(0, 200, 176, 0.9);
+    border: 1px solid #01317f;
+    z-index: 10;
+    border-radius: 12px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  .submit5 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    width: 73px;
+    height: 25px;
+    color: #ffffff;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 11;
+  }
+  

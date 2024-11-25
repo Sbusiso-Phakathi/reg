@@ -1,0 +1,53 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+  }
+  
+  .modal-content {
+    background: white;
+    height: 650px;
+    width: 1000px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    width: 90%;
+    position: relative;
+  }
+  
+  /* .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  } */
+  .carbon-close-filled12 {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 14px;
+    left: 1150px;
+    z-index: 8;
+    overflow: hidden;
+  }
+
+  .close-button  {
+    position: relative;
+    width: 8.32px;
+    height: 14.4px;
+    margin: 0.8px 0 0 4.48px;
+    background: url(../assets/images/9083a571-ef08-40ae-af81-5e3b356d88f1.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 35;
+  }

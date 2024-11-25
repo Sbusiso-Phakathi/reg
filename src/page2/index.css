@@ -1,0 +1,517 @@
+/* :root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container2 {
+  overflow: hidden;
+}
+
+.main-container2,
+.main-container2 * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container2 {
+  position: relative;
+  width: 440px;
+  height: 956px;
+  margin: 0 auto;
+  font-size: 0px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.face-recognition2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 206px;
+  height: 30px;
+  margin: 119px 0 0 116px;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 9;
+}
+.image2 {
+  position: relative;
+  width: 362px;
+  height: 409px;
+  margin: 74px 0 0 39px;
+  background: url(../assets/images/person.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 3;
+  overflow: visible auto;
+  border-radius: 19px;
+}
+.flex-row2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 300px;
+  height: 83.6px;
+  margin: 55px 0 0 31px;
+  z-index: 6;
+}
+.group2 {
+  flex-shrink: 0;
+  position: relative;
+  width: 57.143px;
+  height: 83.6px;
+  background: url(../assets/images/topleft.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 6;
+  border-radius: 16px;
+}
+.group-12 {
+  flex-shrink: 0;
+  position: relative;
+  width: 57.143px;
+  height: 83.6px;
+  background: url(../assets/images/topright.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 5;
+  border-radius: 16px;
+}
+.success2 {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 26.4px 0 0 136px;
+  z-index: 11;
+  overflow: hidden;
+}
+.vector2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../assets/images/ok.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 12;
+}
+.flex-row-fa2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 300px;
+  height: 83.6px;
+  margin: 15.4px 0 0 31px;
+  z-index: 8;
+}
+.group-22 {
+  flex-shrink: 0;
+  position: relative;
+  width: 57.143px;
+  height: 83.6px;
+  background: url(../assets/images/bottomleft.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 8;
+  border-radius: 16px;
+}
+.group-32 {
+  flex-shrink: 0;
+  position: relative;
+  width: 57.143px;
+  height: 83.6px;
+  background: url(../assets/images/bottomright.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 7;
+  border-radius: 16px;
+}
+.face-recognised2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 423px;
+  height: 30px;
+  margin: 31px 0 0 8px;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+.signed-in2 {
+  position: relative;
+  width: 423px;
+  height: 40px;
+  margin: 19px 0 0 10px;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  text-overflow: initial;
+  white-space: nowrap;
+  z-index: 10;
+}
+.signed-in-42 {
+  position: relative;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+.bonolo-pwd2 {
+  position: relative;
+  color: #ff7900;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+.live2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: relative;
+  width: 232px;
+  margin: 80px 0 0 104px;
+  padding: 9px 82px 9px 82px;
+  cursor: pointer;
+  background: rgba(0, 200, 176, 0.9);
+  border: 1px solid #01317f;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.home2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  flex-basis: auto;
+  position: relative;
+  width: 59px;
+  height: 25px;
+  color: #ffffff;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+} */
+
+
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container2 {
+  overflow: hidden;
+}
+
+.main-container2,
+.main-container2 * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container2 {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  font-size: 0;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.face-recognition2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 206px;
+  margin: 20px auto;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 9;
+}
+
+.image2 {
+  position: relative;
+  width: 100%;
+  max-width: 362px;
+  height: auto;
+  margin: 20px auto;
+  background: url(../assets/images/person.png) no-repeat center;
+  background-size: cover;
+  z-index: 3;
+  overflow: visible auto;
+  border-radius: 19px;
+}
+
+.flex-row2,
+.flex-row-fa2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  z-index: 6;
+}
+
+.group2,
+.group-12,
+.group-22,
+.group-32 {
+  flex-shrink: 0;
+  position: relative;
+  width: 25%;
+  height: 83.6px;
+  background-size: cover;
+  z-index: 6;
+  border-radius: 16px;
+}
+
+.group2 {
+  background: url(../assets/images/topleft.png) no-repeat center;
+}
+
+.group-12 {
+  background: url(../assets/images/topright.png) no-repeat center;
+}
+
+.group-22 {
+  background: url(../assets/images/bottomleft.png) no-repeat center;
+}
+
+.group-32 {
+  background: url(../assets/images/bottomright.png) no-repeat center;
+}
+
+.success2 {
+  position: relative;
+  width: 100%;
+  max-width: 90px;
+  height: 90px;
+  margin: 20px auto;
+  z-index: 11;
+  overflow: hidden;
+}
+
+.vector2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../assets/images/ok.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 12;
+}
+
+.face-recognised2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 423px;
+  margin: 20px auto;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.signed-in2,
+.signed-in-42,
+.bonolo-pwd2 {
+  position: relative;
+  width: 100%;
+  max-width: 423px;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  z-index: 10;
+}
+
+.signed-in2 {
+  margin: 10px auto;
+}
+
+.live2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 232px;
+  margin: 40px auto;
+  padding: 9px 82px;
+  cursor: pointer;
+  background: rgba(0, 200, 176, 0.9);
+  border: 1px solid #01317f;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.home2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 59px;
+  height: 25px;
+  color: #ffffff;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .main-container2 {
+    padding: 10px;
+    height: auto;
+  }
+
+  .face-recognition2 {
+    font-size: 1.25rem;
+    margin: 10px auto;
+  }
+
+  .image2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .flex-row2,
+  .flex-row-fa2 {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .group2,
+  .group-12,
+  .group-22,
+  .group-32 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .success2 {
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+  }
+
+  .face-recognised2 {
+    font-size: 1.25rem;
+  }
+
+  .signed-in2 {
+    font-size: 1rem;
+  }
+
+  .live2 {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    margin: 20px auto;
+  }
+
+  .home2 {
+    font-size: 1rem;
+  }
+}
+
+/* For very small screens (e.g., smartphones in portrait mode) */
+@media (max-width: 480px) {
+  .face-recognition2 {
+    font-size: 1rem;
+    margin: 10px auto;
+  }
+
+  .live2 {
+    padding: 9px 50px;
+    max-width: 180px;
+    height: 35px;
+  }
+
+  .home2 {
+    font-size: 1rem;
+    line-height: 20px;
+  }
+
+  .signed-in2,
+  .signed-in-42,
+  .bonolo-pwd2 {
+    font-size: 1rem;
+    margin: 8px auto;
+  }
+
+  .success2 {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+  }
+}

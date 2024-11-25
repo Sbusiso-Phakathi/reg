@@ -1,0 +1,338 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .main-container10 {
+    overflow: hidden;
+  }
+  
+  .main-container10,
+  .main-container10 * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container10 {
+    position: relative;
+    width: 1280px;
+    height: 832px;
+    margin: 0 auto;
+    font-size: 0px;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .powered-by-digital10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 160.84px;
+    height: 24.728px;
+    margin: 202px 0 0 657px;
+    color: #000000;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 7px;
+    font-weight: 400;
+    line-height: 8.75px;
+    text-align: center;
+    z-index: 31;
+  }
+  .attendance-register10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 256px;
+    height: 41.438px;
+    margin: 30.272px 0 0 508px;
+    color: #000000;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+  }
+  .rectangle10 {
+    position: relative;
+    width: 361px;
+    height: 43px;
+    margin: 2.563px 0 0 459px;
+    background: #d9d9d9;
+    z-index: 2;
+    border-radius: 10px;
+  }
+  .text-input10 {
+    display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 263px;
+  height: 20px;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0.4);
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  }
+  .name10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 15px;
+    top: 14px;
+    left: 21px;
+    color: #5a5a5a;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 3;
+  }
+  .rectangle-110 {
+    position: relative;
+    width: 361px;
+    height: 43px;
+    margin: 25px 0 0 459px;
+    background: #d9d9d9;
+    z-index: 10;
+    border-radius: 10px;
+  }
+  .confirm-password-input10 {
+    position: absolute;
+    width: 361px;
+    height: 43px;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    z-index: 12;
+    outline: none;
+  }
+  .surname10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 15px;
+    top: 14px;
+    left: 21px;
+    color: #5a5a5a;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 11;
+  }
+  .rectangle-210 {
+    position: relative;
+    width: 361px;
+    height: 43px;
+    margin: 23px 0 0 459px;
+    background: #d9d9d9;
+    z-index: 6;
+    border-radius: 10px;
+  }
+  .email-input-310 {
+    position: absolute;
+    width: 361px;
+    height: 43px;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    z-index: 8;
+    outline: none;
+  }
+  .email10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 15px;
+    top: 14px;
+    left: 21px;
+    color: #5a5a5a;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 7;
+  }
+  .rectangle-410 {
+    position: relative;
+    width: 361px;
+    height: 43px;
+    margin: 23px 0 0 459px;
+    background: #d9d9d9;
+    z-index: 14;
+    border-radius: 10px;
+  }
+  .password-input10 {
+    position: absolute;
+    width: 361px;
+    height: 43px;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    z-index: 16;
+    outline: none;
+  }
+  .password10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 15px;
+    top: 14px;
+    left: 21px;
+    color: #5a5a5a;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 15;
+  }
+  .rectangle-510 {
+    position: relative;
+    width: 361px;
+    height: 43px;
+    margin: 25px 0 0 459px;
+    background: #d9d9d9;
+    z-index: 18;
+    border-radius: 10px;
+  }
+  .password-input-610 {
+    position: absolute;
+    width: 361px;
+    height: 43px;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    z-index: 20;
+    outline: none;
+  }
+  .confirm-password10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 15px;
+    top: 14px;
+    left: 21px;
+    color: #5a5a5a;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 19;
+  }
+  .rectangle-710 {
+    position: relative;
+    width: 427px;
+    height: 36px;
+    margin: 24px 0 0 422px;
+    z-index: 23;
+    border-radius: 7px;
+  }
+  .register10 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 134.616px;
+    height: 15px;
+    top: 10px;
+    left: 46px;
+    color: #ffffff;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 24;
+  }
+  .already-have-account10 {
+    position: relative;
+    width: 256px;
+    height: 41.438px;
+    margin: 8px 0 0 512px;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.75px;
+    text-align: center;
+    z-index: 25;
+  }
+  .already-have-account-810 {
+    position: relative;
+    color: #000000;
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.75px;
+    text-align: center;
+  }
+  .login10 {
+    position: relative;
+    color: rgba(255, 121, 0, 0.9);
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 13.75px;
+    text-align: center;
+  }
+  .shaper-wordmark10 {
+    position: absolute;
+    width: 17.77%;
+    height: 11.44%;
+    top: 13.66%;
+    left: 43.3%;
+    background: url(../assets/images/55351e0f-d59f-4917-9a09-b9aafb71eea0.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 28;
+  }
+  .shaper-full-logo10 {
+    position: absolute;
+    width: 5.01%;
+    height: 10.31%;
+    top: 14.19%;
+    left: 37.59%;
+    background: url(../assets/images/58892e78-74b3-46ae-81d5-ed2a80c7e34e.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 30;
+  }
+  
+  
+  
