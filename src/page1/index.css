@@ -1,0 +1,268 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+/* Reset some basic elements */
+.main-container1,
+.main-container1 * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container1 {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  font-size: 0;
+  background: #ffffff;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.face-recognition1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 206px;
+  margin: 20px auto;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 7;
+}
+
+.webcam {
+  width: 100%;
+  height: 100%;
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.image1 {
+  position: relative;
+  width: 100%;
+  max-width: 362px;
+  height: auto;
+  margin: 20px auto;
+  background-size: cover;
+  z-index: 1;
+  overflow: visible auto;
+  border-radius: 19px;
+}
+
+.flex-row-ec1,
+.flex-row-ad1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  z-index: 4;
+}
+
+.group1,
+.group-11,
+.group-21,
+.group-31 {
+  flex-shrink: 0;
+  position: relative;
+  width: 25%;
+  height: 83.6px;
+  background-size: cover;
+  z-index: 4;
+  border-radius: 16px;
+}
+
+.group1 {
+  background: url(../assets/images/topleft.png) no-repeat center;
+}
+
+.group-11 {
+  background: url(../assets/images/topright.png) no-repeat center;
+}
+
+.group-21 {
+  background: url(../assets/images/bottomleft.png) no-repeat center;
+}
+
+.group-31 {
+  background: url(../assets/images/bottomright.png) no-repeat center;
+}
+
+.hold-your-head1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.live1 {
+  position: relative;
+  width: 100%;
+  max-width: 232px;
+  height: 44px;
+  margin: 20px auto;
+  background: #ffffff;
+  z-index: 9;
+  border-radius: 12px;
+}
+
+.analyzing1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  max-width: 96px;
+  height: 25px;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000000;
+  font-family: Lexend Deca, var(--default-font-family);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  z-index: 10;
+}
+
+.mdi-camera1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 12px;
+  left: 10px;
+  z-index: 11;
+  overflow: hidden;
+}
+
+.tabler-loader1 {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 0 0 1.132px;
+  z-index: 12;
+  overflow: hidden;
+}
+
+.vector1 {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  background: url(../assets/images/spin.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 13;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .main-container1 {
+    padding: 10px;
+    height: auto;
+  }
+
+  .face-recognition1 {
+    font-size: 1.25rem;
+    margin: 10px auto;
+  }
+
+  .image1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .flex-row-ec1,
+  .flex-row-ad1 {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .group1,
+  .group-11,
+  .group-21,
+  .group-31 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hold-your-head1 {
+    font-size: 1rem;
+  }
+
+  .live1 {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    margin: 20px auto;
+  }
+
+  .analyzing1 {
+    font-size: 1.25rem;
+    width: 100%;
+    max-width: 96px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Further smaller devices like phones in portrait mode */
+@media (max-width: 480px) {
+  .face-recognition1 {
+    font-size: 1rem;
+  }
+
+  .live1 {
+    max-width: 180px;
+    height: 35px;
+  }
+
+  .analyzing1 {
+    font-size: 1rem;
+    top: 6px;
+  }
+
+  .mdi-camera1 {
+    width: 18px;
+    height: 18px;
+    top: 8px;
+    left: 10px;
+  }
+
+  .tabler-loader1 {
+    width: 16px;
+    height: 16px;
+  }
+
+  .vector1 {
+    width: 15px;
+    height: 15px;
+  }
+}

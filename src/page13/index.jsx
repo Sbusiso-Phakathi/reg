@@ -50,9 +50,9 @@ export default function Main() {
         </div>
         <div className='password12'>
           <select type="text" className='text-input10' id="cohort" name="cohort" onChange={handleChange} placeholder='Cohort' required>
-            <option value="0">Remote</option>
-            <option value="1">Front Office</option>
-            <option value="2">Back Office</option>
+            <option value="17">Remote</option>
+            <option value="18">Front Office</option>
+            <option value="22">Back Office</option>
           </select>
         </div>
         <div className='email12' style={{ top:"470px" }}>

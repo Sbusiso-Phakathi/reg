@@ -309,26 +309,7 @@ export default function Main() {
           <span className='name21'>Name</span>
           <span className='email21'>Email</span>
         </div>
-        {/* <span className='botswana21'>Botswana</span>
-        <span className='zero-d21'>
-          0<br />
-        </span>
-        <span className='congo21'>Congo</span>
-        <span className='text-1721'>
-          0<br />
-        </span>
-        <span className='fiji21'>Fiji</span>
-        <span className='zero-e21'>
-          0<br />
-        </span>
-        <div className='rectangle-f21' />
-        <span className='haiti21'>Haiti</span>
-        <span className='zero-1021'>0</span>
-        <span className='all21'>All</span>
-        <span className='zero-1121'>0</span> */}
-        {/* <div className='vector-1221' style= {{ top: `${cohortTopOffset + 300 }px` }}/> */}
-        {/* <span className='manage-learners21'>Manage Learners</span> */}
-      
+  
         <div className='rectangle-1421'>
           <div className='olawale-munna-unsplash21' />
           <div className='rectangle-1521' />

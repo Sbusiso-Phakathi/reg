@@ -33,7 +33,7 @@ export default function Main() {
         const response = await axios.post(
           'http://127.0.0.1:5002/upload-image',  
           formData,
-          { headers: { 'Content-Type': 'multipart/form-data', "Cache-Control": "no-cache", } }
+          { headers: { 'Content-Type': 'multipart/form-data' } }
         );
   
         console.log(response.data);
