@@ -16,12 +16,12 @@ export default function Main() {
   const [all, setAll] = useState([]);
   const [allids, setAllids] = useState([]);
   const [date, setDate] = useState(new Date());
-  const [cohort, setCohort] = useState();
+  const [cohort, setCohort] = useState(17);
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   // const [searchResults, setSearchResults] = useState([]);
-  // const [isActive, setIsActive] = useState(false); 
-  // const [idcohort, setIdcohort] = useState(); 
+  const [isActive, setIsActive] = useState(false); 
+  const [idcohort, setIdcohort] = useState(); 
   const [isCohortVisible, setIsCohortVisible] = useState(false); 
   const [isUp, setIsup] = useState(false); 
 
@@ -56,8 +56,8 @@ export default function Main() {
   };
 
 
-  const register = () => {
-    navigate('/Page5', { replace: true });
+  const report = () => {
+    navigate('/Page18', { replace: true });
   };
 
   const toggleCalendar = () => {
@@ -203,9 +203,9 @@ export default function Main() {
             <div className='report-box-multiple21'>
               <div className='vector21' />
             </div>
-            <span className='report21'>Report</span>
+            <a href="" onClick={report}><span className='report21'>Report</span></a>
           </div>
-          <span className='attendence21'>Attendence</span>
+          <span className='attendence21'>Attendance</span>
         </div>
         <span className='powered-by-the-digital-academy21'>
           POWERED BY THE DIGITAL ACADEMY
