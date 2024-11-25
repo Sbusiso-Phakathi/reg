@@ -253,24 +253,26 @@ export default function Main() {
       <div >
           {all.map((detail, i) => (
            <div key={i}> {  isCohortVisible ?
-                (<div key={i}>
-              <span
-                style={{ top: `${cohortTopOffset + (33 * i)}px`}}
-                className='angola9' 
-              >
-                <div className='rectangle-999' style={{ background:"#00c8b0" }}>{ detail == "all"? <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(5000)}>{detail}</a>:
-                 <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(allids[i])}>{detail}</a>}</div>
-              </span>
-              <span
-                style={{ top: `${cohortTopOffset + (34.5 * i)}px` }}
-                className='number-139'
-              >
-                {all.length}
-              </span>
-            </div>):  (<div key={i}>
-            </div>)}</div>
-          ))}
-        </div>
+              (<div key={i}>
+                <span
+                  style={{ top: `${cohortTopOffset + (33 * i)}px`}}
+                  className='angola9' 
+                >
+                  <div className='rectangle-999' style={{ background:"#00c8b0" }}>{ detail == "all"? <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(5000)}>{detail}</a>:
+                  <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(allids[i])}>{detail}</a>}</div>
+                </span>
+                <span
+                  style={{ top: `${cohortTopOffset + (34.5 * i)}px` }}
+                  className='number-139'
+                >
+                  {all.length}
+                </span>
+            </div>):  
+            (<div key={i}></div>)}
+          </div>
+            ))
+          }
+      </div>
         <a href="#" onClick={() => search()}><div class="search-icon"/></a>
         </div>
   
