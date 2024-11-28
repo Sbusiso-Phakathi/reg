@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Add = ({ modal }) => {
+const Footer = () => {
     
     return (
         <div>
@@ -11,4 +11,4 @@ const Add = ({ modal }) => {
    );
 };
 
-export default Add;
+export default Footer;

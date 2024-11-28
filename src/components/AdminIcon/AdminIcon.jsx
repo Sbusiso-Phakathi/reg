@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminIcon = ({ modal }) => {
+const AdminIcon = () => {
     
     return (
         <div>
