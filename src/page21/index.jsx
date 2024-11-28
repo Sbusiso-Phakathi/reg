@@ -6,6 +6,16 @@ import Calendar from "react-calendar";
 import _ from 'lodash';
 import Page13 from '/src/page13/index.jsx';
 import Page12 from '/src/page12/index.jsx';
+import Sidebar from "../components/Sidebar/Sidebar"
+import Content from '../components/Content/Content';
+import Modal from '../components/Modal/Modal'
+import Add from '../components/Add/Add'
+import ContentHeader from '../components/ContentHeader/ContentHeader'
+import PageHeader from '../components/PageHeader/PageHeader'
+import Pagination from '../components/Pagination/Pagination'
+import Footer from '../components/Footer/Footer'
+import AdminIcon from '../components/AdminIcon/AdminIcon'
+import Logo from '../components/Logo/Logo'
 
 export default function Main() {
 
@@ -14,6 +24,7 @@ export default function Main() {
   const [data, setData] = useState([]);
   const [all, setAll] = useState([]);
   const [allids, setAllids] = useState([]);
+  const [counts, setCounts] = useState([]);
   const [date, setDate] = useState(new Date());
   const [cohort, setCohort] = useState(17);
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
@@ -23,24 +34,6 @@ export default function Main() {
   const [idcohort, setIdcohort] = useState(); 
   const [isCohortVisible, setIsCohortVisible] = useState(false); 
   const [isUp, setIsup] = useState(false); 
-
-  const Modal = ({ isOpen, onClose, children }) => {
-    if (!isOpen) return null;
-  
-    return (
-      <div className="modal-overlay">
-        <div className="modal-content">
-          <button  onClick={onClose}>
-          <div className='carbon-close-filled12'>
-        <div className='vector12' />
-      </div>
-          </button>
-          {children}
-        </div>
-      </div>
-    );
-  };
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(null); 
 
@@ -53,7 +46,6 @@ export default function Main() {
     setIsModalOpen(false);
     setCurrentPage(null);
   };
-
 
   const report = () => {
     navigate('/Page18', { replace: true });
@@ -77,7 +69,6 @@ export default function Main() {
       const response = await fetch(`http://localhost:5002/data?date=${formattedDate}&cohort=${cohort}`);
       const result = await response.json();
       setData(result); 
-      console.log(result)
       setIsModalOpen(false)      
       
     } catch (error) {
@@ -120,7 +111,6 @@ export default function Main() {
     axios
       .get(`http://127.0.0.1:5002/users/${id}`)
       .then(response => {
-        console.log(id);
         setData(response.data || []);
         setCohort(id)
       })
@@ -137,6 +127,7 @@ export default function Main() {
           setData(response.data);
           setAll(response.data[0].all || []);
           setAllids(response.data[0].allids || []);
+          setCounts(response.data[0].counts || []);
         }
       })
       .catch(error => {
@@ -154,182 +145,52 @@ export default function Main() {
     user.email,
   ]);
 
-  const cohortTopOffset = 70;
-  const baseY = 120;
-  const baseYButton = 154;
-  const baseX = [40, 147, 263, 395, 495, 580, 695];
-  const styles = ['text-1c9', 'text-1d9', 'text-1e9', 'text-209', 'text-219', 'text-229', 'text-239'];
-
   return (
     <div className='main-container21'>
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        {currentPage === "page12" && <Page12/>}
-        {currentPage === "page13" && <Page13/>}
-        {currentPage === "calendar" &&    
-          <div style={{ margin: '20px' }}>
-                <Calendar onChange={handleDateChange} value={date} className="custom-calendar" />
-          </div>}
-      </Modal>
+          {currentPage === "page12" && <Page12/>}
+          {currentPage === "page13" && <Page13/>}
+          {currentPage === "calendar" &&    
+            <div style={{ margin: '20px' }}>
+                  <Calendar onChange={handleDateChange} value={date} className="custom-calendar" />
+            </div>}
+      </Modal> 
 
       <div className='flex-row21'>
         <div className='rectangle21'>
-          <div className='flex-row-db21'>
-            <div className='shaper-full-logo21' />
-            <div className='shaper-wordmark21' />
-          </div>
-          <button
-            className='plus9'
-            onClick={toggleCohort}
-            style={{ fontSize: '24px', border: 'none', background: 'transparent', cursor: 'pointer' }}
-          >
-            { isUp ? <span>&darr;</span> : <span>&rarr;</span>}
-          </button>
+          { <Logo/> }
         </div>
 
-        <div className='rectangle-121'>
-          <a href="#" onClick={() => handleOpenModal("calendar")()}><div className='calendar9' style={{ textAlign: "center",   top: '-13px', marginTop: "40px", marginLeft: "885px"}}/></a>
-       
-          <div className='rectangle-221'>
-            <span className='time21'>Time</span>
-            <span className='time-range21'>9:00 AM to 4:30</span>
-          </div>
-          <div className='rectangle-321'>
-            <span className='date21'><strong>{date.toDateString()}</strong></span>
-          </div>
-          <span className='dashboard21'>Dashboard</span>
-          <div className='rectangle-421'>
-            <div className='report-box-multiple21'>
-              <div className='vector21' />
-            </div>
-            <a href="" onClick={report}><span className='report21'>Report</span></a>
-          </div>
-          <span className='attendence21'>Attendance</span>
-        </div>
+        { <PageHeader modal={handleOpenModal} date={date.toDateString()} report={report} handleDateChange={handleDateChange}/>}
+        
         <span className='powered-by-the-digital-academy21'>
           POWERED BY THE DIGITAL ACADEMY
         </span>
 
-         <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search"   value={searchQuery}
-                onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    debouncedSearch();
-                }}/>
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search"   value={searchQuery}
+                    onChange={(e) => {
+                        setSearchQuery(e.target.value);
+                        debouncedSearch();
+                    }}/>
 
-        {multiArrayData.length > 0 ? (multiArrayData.map((user, index) => (
-            <div key={index} className="user-row">
-                {user.slice(1).map((detail, i) => (
-                <span
-                    style={{ height: '16px', top: `${baseY + (35 * (index + 1))}px`, left: `${baseX[i]}px` }}
-                    className={styles[i]}
-                    key={i}
-                >
-                    {detail}
-                </span>
-                ))}
-                <button
-                    style={{ top: `${baseYButton + (45 * index)}px` }}
-                    className='frame9'
-                >
-                <span className='edit9'>Edit</span>
-                </button>
-                <button
-                    onClick={() => delet(user[0])}
-                    style={{ top: `${baseYButton + (45 * index)}px` }}
-                    className='frame-a9'
-                >
-                    <span className='delete9'>Delete</span>
-                </button>
-            </div>
-        ))):   <div className='rectangle-1321'>
-        <span className='no-data-display21'>
-          No Data to Display Please add a new cohort
-        </span>
-      </div>}
-        
-      <div >
-          {all.map((detail, i) => (
-           <div key={i}> {  isCohortVisible ?
-              (<div key={i}>
-                <span
-                  style={{ top: `${cohortTopOffset + (33 * i)}px`}}
-                  className='angola9' 
-                >
-                  <div className='rectangle-999' style={{ background:"#00c8b0" }}>{ detail == "all"? <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(5000)}>{detail}</a>:
-                  <a href='#' style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(allids[i])}>{detail}</a>}</div>
-                </span>
-                <span
-                  style={{ top: `${cohortTopOffset + (34.5 * i)}px` }}
-                  className='number-139'
-                >
-                  {all.length}
-                </span>
-            </div>):  
-            (<div key={i}></div>)}
+            { <Content learners={multiArrayData}/> }
+            { <Sidebar cohorts={all} counts = {counts} users={users} allids={allids} toogle={toggleCohort} isup={isUp}/> } 
+            <a href="#" onClick={() => search()}><div class="search-icon"/></a>
           </div>
-            ))
-          }
-      </div>
-        <a href="#" onClick={() => search()}><div class="search-icon"/></a>
-        </div>
-  
-        <div className='rectangle-821'>
-        
-         <button
-            onClick={() => handleOpenModal("page12")}
-            style={{ fontSize: '34px', border: 'none', left: "5px", color: "white", background: 'transparent', cursor: 'pointer' }}
-          >
-           <span className='add-cohort21' style={{ left: "25px"}}>Add Cohort +</span>
-          </button>
-        </div>
 
-        <div className='rectangle-821' style={{ left: "1050px" }}>
-        
-         <button
-            onClick={() => handleOpenModal("page13")}
-            style={{ fontSize: '34px', border: 'none', left: "5px", color: "white", background: 'transparent', cursor: 'pointer' }}
-          >
-            <span className='add-cohort21' style={{ left: "25px"}}>Add Learner +</span>
-          </button>
+        { <Add modal={handleOpenModal}/> }
+        { <ContentHeader/> }
+        { <Pagination />}
 
-        </div>
         <span className='cohort21' style={{ top: "100px" , left: "50px" }}>Manage Learners </span>
         <span className='cohort21'>Cohorts </span>
         <div className='rectangle-a21' />
- 
-        <div className='rectangle-b21'>
-          <span className='attendance21'>Attendence</span>
-          <span className='attendance-date21'>Attendance Date</span>
-          <span className='learner-id21'>Learner ID</span>
-          <span className='surname21'>Surname</span>
-          <span className='cohort-c21'>Cohort</span>
-          <span className='name21'>Name</span>
-          <span className='email21'>Email</span>
-        </div>
-  
-        <div className='rectangle-1421'>
-          <div className='olawale-munna-unsplash21' />
-          <div className='rectangle-1521' />
-          <span className='admin-user21'>Admin User</span>
-        </div>
-        <button className='rectangle-1621'>
-          <span className='number-221'>2</span>
-        </button>
-        <span className='previous21'>Previous</span>
-        <span className='next21'>Next</span>
-        <div className='back-1721' />
-        <span className='number-121'>1</span>
-        <span className='number-321'>3</span>
-        <div className='back-1821' />
-        <div className='ellipse-1921' />
-        <div className='ellipse-1a21' />
-        <div className='ellipse-1b21' />
-        <span className='admin-email21'>Admin@Shaper.co.za</span>
+
+        { <AdminIcon/> }
       </div>
-      <span className='shaper-copyright21'>
-        Shaper (c) 2024 all right reserved
-      </span>
+      {<Footer /> }
     </div>
   );
 }

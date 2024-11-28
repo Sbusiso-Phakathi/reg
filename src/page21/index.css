@@ -22,7 +22,7 @@
   }
   
   .main-container21{
-    position: relative;
+    position: absolute;
     width: 1280px;
     height: 832px;
     margin: 0 auto;
@@ -448,6 +448,24 @@
     text-align: center;
     white-space: nowrap;
     z-index: 64;
+  }
+  .angola {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 166px;
+    height: 20px;
+    top: 179px;
+    left: 58px;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Lexend Deca, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 65;
   }
   .zero21{
     display: flex;
@@ -1092,7 +1110,7 @@
   .modal-content {
     background: white;
     height: 650px;
-    width: 1000px;
+    width: 100px;
     padding: 20px;
     border-radius: 8px;
     max-width: 1200px;
@@ -1495,6 +1513,10 @@
     z-index: 24;
     border-radius: 15px;
   }
+
+
+
+  
   .angola9 {
     display: flex;
     align-items: flex-start;
@@ -1502,9 +1524,9 @@
     position: absolute;
     width: 166px;
     height: 20px;
-    /* top: 179px; */
+    top: 40px;
     text-decoration: none; /* Removes underline */
-    left: -200px;
+    left: -300px;
     color: rgba(0, 0, 0, 0.8);
     font-family: Lexend Deca, var(--default-font-family);
     font-size: 16px;
@@ -1857,14 +1879,15 @@
     white-space: nowrap;
     z-index: 62;
   }
-  .text-1c9 {
+
+  .text-1c {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
     height: 16px;
-    /* top: 285px;
-    left: 270px; */
+    top: 155px;
+    left: 50px;
     color: #000000;
     font-family: Lexend Deca, var(--default-font-family);
     font-size: 13px;
@@ -2328,7 +2351,7 @@
   /* Custom calendar container */
 .custom-calendar {
     position: fixed; /* Ensures the calendar stays on top and in the viewport */
-    left: 50%; /* Center horizontally */
+    left: 1350px; /* Center horizontally */
     transform: translate(-50%, -20%); /* Perfect centering */
     z-index: 9999; /* Ensures it floats above other content */
     background: #f5f5f5;
@@ -2338,7 +2361,7 @@
     font-family: 'Arial', sans-serif;
     z-index: 100;
     top: 100px; /* Example: Adjust as needed */
-
+    width: 150px;
   }
   
   /* Calendar header */
@@ -2488,17 +2511,6 @@
     border-radius: 8px;
   }
   
-  :root {
-    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-      "Source Han Sans CN", sans-serif;
-  }
-  
-  .main-container {
-    overflow: hidden;
-  }
-  
 
   
   .addbox{
@@ -2508,5 +2520,81 @@
     margin: 0 auto;
     background: #01317f;
     border-radius: 7px;
+  }
+  
+
+  .cohort-container {
+    width: 180px;
+    top: 50px;
+    height: 500px;
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    margin: 16px;
+    padding: 8px;
+    /* background-color: #f9f9f9; */
+  }
+  
+  .cohort-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .cohort-scrollable {
+    width: 180px;
+    height: 450px;
+    max-height: 800px;
+    overflow-y: auto;
+  }
+
+   
+  .cohort-scrollable2 {
+    height: 400px;
+    width: 890px;
+    left: 20px;
+    max-height: 800px;
+    overflow-y: auto;
+  }
+  
+  .cohort-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    left: 900px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .cohort-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Hover Effect */
+  .cohort-item:hover {
+    background-color: rgba(0, 200, 176, 0.9);
+    color: #fff; /* Change text color */
+  }
+  
+  .country {
+    font-weight: bold;
+  }
+  
+  .count {
+    color: #666;
+  }
+  
+  .user-item {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    justify-content: space-between; /* Add spacing between items */
+    gap: 10px; /* Optional: Add spacing between individual fields */
+    padding: 10px; /* Optional: Add padding for better aesthetics */
+    border-bottom: 1px solid #ccc; /* Optional: Add a bottom border for separation */
+  }
+  
+  .user-item span {
+    flex: 1; /* Each field takes equal width; adjust as needed */
+    text-align: left; /* Align text to the left */
   }
   
