@@ -15,9 +15,10 @@ const PageHeader = ({ modal, date, report, handleDateChange }) => {
           <div className='rectangle-321'>
             <span className='date21'><strong>{date}</strong></span>
           </div>
-          <span className='dashboard21'>Dashboard</span><div style={{ margin: '20px' }}>
+          <span className='dashboard21'>Dashboard</span>
+            {/* <div style={{ margin: '20px' }}>
                   <Calendar onChange={handleDateChange} value={date} className="custom-calendar" />
-            </div>
+            </div> */}
           <div className='rectangle-421'>
             <div className='report-box-multiple21'>
               <div className='vector21' />

@@ -7,7 +7,7 @@ import _ from 'lodash';
 import Page13 from '/src/page13/index.jsx';
 import Page12 from '/src/page12/index.jsx';
 import Sidebar from "../components/Sidebar/Sidebar"
-import Content from '../components/Content/Content';
+import Content2 from '../components/Content2/Content2';
 import Modal from '../components/Modal/Modal'
 import Add from '../components/Add/Add'
 import ContentHeader from '../components/ContentHeader/ContentHeader'
@@ -55,7 +55,6 @@ export default function Main() {
     setIsCalendarVisible(!isCalendarVisible);
   };
 
-
   const toggleCohort = () => {
     setIsCohortVisible(!isCohortVisible);
     setIsup(!isUp);
@@ -65,7 +64,6 @@ export default function Main() {
     setDate(selectedDate);
     const formattedDate = selectedDate.toISOString().split('T')[0];
     try {
-
       const response = await fetch(`http://localhost:5002/data?date=${formattedDate}&cohort=${cohort}`);
       const result = await response.json();
       setData(result); 
@@ -74,7 +72,6 @@ export default function Main() {
     } catch (error) {
       console.error('Error fetching data:', error);
       setIsCalendarVisible(true)
-
     }
   }
 
@@ -174,8 +171,7 @@ export default function Main() {
                         setSearchQuery(e.target.value);
                         debouncedSearch();
                     }}/>
-
-            { <Content learners={multiArrayData}/> }
+            { <Content2 learners={multiArrayData}/>}
             { <Sidebar cohorts={all} counts = {counts} users={users} allids={allids} toogle={toggleCohort} isup={isUp}/> } 
             <a href="#" onClick={() => search()}><div class="search-icon"/></a>
           </div>
