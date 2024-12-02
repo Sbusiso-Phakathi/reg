@@ -174,21 +174,6 @@ const Content2 = ({ learners }) => {
  
       <div className="attendance-sheet">
       <h1 className="sheet-title">SHAPER MONTHLY EMPLOYEE ATTENDANCE REPORT</h1>
-{/*       
-      <div className="sheet-info">
-        <div>
-          <h3>PREPARED BY</h3>
-          <p>Karl Peter</p>
-        </div>
-        <div>
-          <h3>MONTH AND YEAR</h3>
-          <p>January-2024</p>
-        </div>
-        <div>
-          <h3>BUSINESS NAME</h3>
-          <p>Alpha Inc.</p>
-        </div>
-      </div> */}
 
       <div className="status-legend">
         {Object.entries(statusLabels).map(([key, label]) => (

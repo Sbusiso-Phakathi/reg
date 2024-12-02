@@ -8,6 +8,7 @@ import Page13 from '/src/page13/index.jsx';
 import Page12 from '/src/page12/index.jsx';
 import Sidebar from "../components/Sidebar/Sidebar"
 import Content2 from '../components/Content2/Content2';
+import Content from '../components/Content/Content';
 import Modal from '../components/Modal/Modal'
 import Add from '../components/Add/Add'
 import ContentHeader from '../components/ContentHeader/ContentHeader'
