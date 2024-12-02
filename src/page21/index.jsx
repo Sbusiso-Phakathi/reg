@@ -116,6 +116,19 @@ export default function Main() {
       });
   };
 
+
+  const monthlyreport = (id) => {
+    axios
+      .get(`http://127.0.0.1:5002/monthlyreport/${id}`)
+      .then(response => {
+        setData(response.data || []);
+      })
+      .catch(error => {
+        console.error("Error fetching user details:", error);
+      });
+  };
+
+
   useEffect(() => {
     axios
       .get(`http://127.0.0.1:5002/learners`)
@@ -140,7 +153,9 @@ export default function Main() {
     user.lid,
     user.cohort,
     user.email,
+    user.attendance,
   ]);
+  console.log(multiArrayData)
 
   return (
     <div className='main-container21'>
@@ -172,14 +187,14 @@ export default function Main() {
                         debouncedSearch();
                     }}/>
             { <Content2 learners={multiArrayData}/>}
+            
             { <Sidebar cohorts={all} counts = {counts} users={users} allids={allids} toogle={toggleCohort} isup={isUp}/> } 
             <a href="#" onClick={() => search()}><div class="search-icon"/></a>
           </div>
 
         { <Add modal={handleOpenModal}/> }
-        { <ContentHeader/> }
+        {/* { <ContentHeader/> } */}
         { <Pagination />}
-
         <span className='cohort21' style={{ top: "100px" , left: "50px" }}>Manage Learners </span>
         <span className='cohort21'>Cohorts </span>
         <div className='rectangle-a21' />

@@ -2,32 +2,32 @@
     font-family: Arial, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     z-index: 9999;
     position: absolute;
     left: 40px;
-    top: 110px;
-    height: 30px;
+    top: 50px;
+    /* height: 30px; */
     width: 900px;
   }
   
   .sheet-title {
-    color: #1D4ED8;
+    color: rgba(0, 200, 176, 0.9);
     text-align: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   
   .sheet-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 20px;
+    /* gap: 20px; */
+    /* margin-bottom: 20px; */
   }
   
   .status-legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    /* gap: 10px; */
     margin-bottom: 20px;
   }
   
@@ -93,12 +93,37 @@
     gap: 10px;
     font-size: 0.875rem;
   }
+  .table-container {
+    max-height: 400px; /* Adjust height as needed */
+    max-width: 1100px;
+    width: 1000px;
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Optional: to highlight the scrollable area */
+  }
   
-  .status-y { background-color: #D1FAE5; color: #047857; }
-  .status-p { background-color: #DBEAFE; color: #1D4ED8; }
-  .status-u { background-color: #FFEDD5; color: #C2410C; }
-  .status-n { background-color: #111827; color: #FFFFFF; }
-  .status-h { background-color: #FEF3C7; color: #B45309; }
+  .attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .attendance-table th, .attendance-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .attendance-table th {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0; /* Keeps the header row visible while scrolling */
+    z-index: 1; /* Ensures the header is above other content */
+  }
+  
+  .status-y { background-color: #4aa877; color: #047857; }
+  .status-p { background-color: #d01c1c; color: #1D4ED8; }
+  .status-u { background-color: #d48d30; color: #C2410C; }
+  .status-n { background-color: #16759e; color: #FFFFFF; }
+  .status-h { background-color: #ccfec7; color: #B45309; }
   
   @media (max-width: 768px) {
     .sheet-info {

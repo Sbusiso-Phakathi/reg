@@ -1,6 +1,6 @@
 // src/components/Sidebar/Sidebar.js
 import React from 'react';
-// import styles from "../Content/Content.module.css"
+import styles from "../Content/Content"
 
 const Content = ({ learners }) => {
     return (
