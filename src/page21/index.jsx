@@ -101,6 +101,7 @@ export default function Main() {
         setLoading(false);
       }
     };
+    
   const debouncedSearch = _.debounce(search, 300);
 
   const users = (id) => {

@@ -6,6 +6,8 @@ import axios from 'axios';
 export default function Main() {
 
   const navigate = useNavigate();
+  const [cohort, setCohort] = useState([]);
+
 
   const [formData, setFormData] = useState({
     name: '',
@@ -22,6 +24,22 @@ export default function Main() {
       [name]: value,
     }));
   };
+
+
+  useEffect(() => {
+    axios
+      .get(`http://127.0.0.1:5002/cohorts`)
+      .then(response => {
+        if (response.data && response.data.length > 0) {
+          setCohort(response.data || []);
+          console.log(cohort)
+
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching learners:", error);
+      });
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,9 +68,10 @@ export default function Main() {
         </div>
         <div className='password12'>
           <select type="text" className='text-input10' id="cohort" name="cohort" onChange={handleChange} placeholder='Cohort' required>
-            <option value="17">Remote</option>
-            <option value="18">Front Office</option>
-            <option value="22">Back Office</option>
+          {cohort.map((coh, dayIndex) => (
+                 <option value="17">{coh}</option>
+                  ))}
+            
           </select>
         </div>
         <div className='email12' style={{ top:"470px" }}>
