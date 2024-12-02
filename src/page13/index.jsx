@@ -3,11 +3,9 @@ import './index.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Main() {
+export default function Main({cohorts, cohortsids}) {
 
   const navigate = useNavigate();
-  const [cohort, setCohort] = useState([]);
-
 
   const [formData, setFormData] = useState({
     name: '',
@@ -24,22 +22,6 @@ export default function Main() {
       [name]: value,
     }));
   };
-
-
-  useEffect(() => {
-    axios
-      .get(`http://127.0.0.1:5002/cohorts`)
-      .then(response => {
-        if (response.data && response.data.length > 0) {
-          setCohort(response.data || []);
-          console.log(cohort)
-
-        }
-      })
-      .catch(error => {
-        console.error("Error fetching learners:", error);
-      });
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,10 +50,9 @@ export default function Main() {
         </div>
         <div className='password12'>
           <select type="text" className='text-input10' id="cohort" name="cohort" onChange={handleChange} placeholder='Cohort' required>
-          {cohort.map((coh, dayIndex) => (
-                 <option value="17">{coh}</option>
+          {cohorts.map((cohort, i) => (
+                 <option key={i} value={cohortsids[i]}>{cohort}</option>
                   ))}
-            
           </select>
         </div>
         <div className='email12' style={{ top:"470px" }}>

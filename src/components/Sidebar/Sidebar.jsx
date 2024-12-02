@@ -4,6 +4,7 @@ import styles from './Sidebar.css';
 
 
 const Sidebar = ({ cohorts, counts, users, allids, toogle, isup }) => {
+    console.log(allids)
     return (
         <div>     
             <button
@@ -14,19 +15,19 @@ const Sidebar = ({ cohorts, counts, users, allids, toogle, isup }) => {
                 { isup ? <span>&rarr;</span> : <span>&darr;</span>}
             </button>
             <div className='angola9'>
-            <aside className='cohort-container'>
-                <div className='cohort-scrollable'>
-                {cohorts.map((cohort,i) => (
-                    <div key={cohort.i} className='cohort-item'>
-                    <div>{ cohort == "all"? <a href='#'  style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(5000)}>{cohort}</a>:
-                    <a href='#'  style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(allids[i])}>{cohort}</a>}</div>
-                    <span className='count'>{counts[i]}</span>
+                <aside className='cohort-container'>
+                    <div className='cohort-scrollable'>
+                    {cohorts.map((cohort,i) => (
+                        <div key={cohort.i} className='cohort-item'>
+                        <div>{ cohort == "all"? <a href='#'  style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(5000)}>{cohort}</a>:
+                        <a href='#'  style={{ textDecoration: "none", padding: "10px" }} onClick={() => users(allids[i])}>{cohort}</a>}</div>
+                        <span className='count'>{counts[i]}</span>
+                        </div>
+                    ))}
                     </div>
-                ))}
-                </div>
-            </aside>
+                </aside>
             </div>
-            </div>
+        </div>
     );
   };
   

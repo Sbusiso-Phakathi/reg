@@ -166,7 +166,7 @@ const Content2 = ({ learners }) => {
       }
     });
 
-    totals.attendancePercentage = Math.round((totals.attended / 21) * 100);
+    totals.attendancePercentage = Math.round((totals.attended / 31) * 100);
     employee.totals = totals;
   };
 
@@ -201,7 +201,7 @@ const Content2 = ({ learners }) => {
                   <td className="employee-info">
                     <div>{employee[1]}</div>
                     {/* <div className="employee-title">{employee[1]}</div> */}
-                    {/* <div className="employee-department">{employee[2]}</div> */}
+                    <div className="employee-department">{employee[2]}</div>
                   </td>
                   {(employee[7]).map((status, dayIndex) => (
                     <td 

@@ -65,7 +65,7 @@ export default function Main() {
     setDate(selectedDate);
     const formattedDate = selectedDate.toISOString().split('T')[0];
     try {
-      const response = await fetch(`http://localhost:5002/data?date=${formattedDate}&cohort=${cohort}`);
+      const response = await fetch(`https://regapp.vercel.app/data?date=${formattedDate}&cohort=${cohort}`);
       const result = await response.json();
       setData(result); 
       setIsModalOpen(false)      
@@ -78,7 +78,7 @@ export default function Main() {
 
   const delet = (id) => {
     axios
-      .delete(`http://127.0.0.1:5002/delet/${id}`)
+      .delete(`https://regapp.vercel.app/delet/${id}`)
       .then(() => {
         setData(data.filter(user => user.id !== id));
       })
@@ -90,7 +90,7 @@ export default function Main() {
   const search = async () => {
         setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5002/search`, {
+        const response = await axios.get(`https://regapp.vercel.app/search`, {
           params: { query: searchQuery },
         });
         setData(response.data);
@@ -101,14 +101,14 @@ export default function Main() {
         setLoading(false);
       }
     };
-    
+
   const debouncedSearch = _.debounce(search, 300);
 
   const users = (id) => {
     setIsActive(true)
     setIdcohort(id)
     axios
-      .get(`http://127.0.0.1:5002/users/${id}`)
+      .get(`https://regapp.vercel.app/users/${id}`)
       .then(response => {
         setData(response.data || []);
         setCohort(id)
@@ -121,7 +121,7 @@ export default function Main() {
 
   const monthlyreport = (id) => {
     axios
-      .get(`http://127.0.0.1:5002/monthlyreport/${id}`)
+      .get(`https://regapp.vercel.app/monthlyreport/${id}`)
       .then(response => {
         setData(response.data || []);
       })
@@ -133,7 +133,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5002/learners`)
+      .get(`https://regapp.vercel.app/learners`)
       .then(response => {
         if (response.data && response.data.length > 0) {
           setData(response.data);
@@ -164,7 +164,7 @@ export default function Main() {
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           {currentPage === "page12" && <Page12/>}
-          {currentPage === "page13" && <Page13/>}
+          {currentPage === "page13" && <Page13 cohorts={all} cohortsids={allids}/>}
           {currentPage === "calendar" &&    
             <div style={{ margin: '20px' }}>
                   <Calendar onChange={handleDateChange} value={date} className="custom-calendar" />
