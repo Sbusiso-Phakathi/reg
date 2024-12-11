@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import _ from 'lodash';
-import Page13 from '/src/page13/index.jsx';
-import Page12 from '/src/page12/index.jsx';
+import AddLearner from '../components/AddLearner/AddLearner';
+import AddCohort from '../components/AddCohort/AddCohort'
+import ScanFace from '../components/ScanFace/ScanFace'
 import Sidebar from "../components/Sidebar/Sidebar"
 import Content2 from '../components/Content2/Content2';
 import Content from '../components/Content/Content';
@@ -25,6 +26,7 @@ export default function Main() {
   const [data, setData] = useState([]);
   const [all, setAll] = useState([]);
   const [allids, setAllids] = useState([]);
+  const [getmonth, setMonth] = useState("Jan");
   const [counts, setCounts] = useState([]);
   const [date, setDate] = useState(new Date());
   const [cohort, setCohort] = useState(17);
@@ -65,7 +67,7 @@ export default function Main() {
     setDate(selectedDate);
     const formattedDate = selectedDate.toISOString().split('T')[0];
     try {
-      const response = await fetch(`https://regapp.vercel.app/data?date=${formattedDate}&cohort=${cohort}`);
+      const response = await fetch(`http://localhost:5002/data?date=${formattedDate}&cohort=${cohort}`);
       const result = await response.json();
       setData(result); 
       setIsModalOpen(false)      
@@ -78,7 +80,7 @@ export default function Main() {
 
   const delet = (id) => {
     axios
-      .delete(`https://regapp.vercel.app/delet/${id}`)
+      .delete(`http://127.0.0.1:5002/delet/${id}`)
       .then(() => {
         setData(data.filter(user => user.id !== id));
       })
@@ -90,7 +92,7 @@ export default function Main() {
   const search = async () => {
         setLoading(true);
       try {
-        const response = await axios.get(`https://regapp.vercel.app/search`, {
+        const response = await axios.get(`http://localhost:5002/search`, {
           params: { query: searchQuery },
         });
         setData(response.data);
@@ -108,7 +110,7 @@ export default function Main() {
     setIsActive(true)
     setIdcohort(id)
     axios
-      .get(`https://regapp.vercel.app/users/${id}`)
+      .get(`http://localhost:5002/users?&id=${id}&month=${month}`)
       .then(response => {
         setData(response.data || []);
         setCohort(id)
@@ -118,10 +120,23 @@ export default function Main() {
       });
   };
 
+  const month = (month) => {
+    setIsActive(true)
+    setIdcohort(id)
+    axios
+      .get(`http://localhost:5002/users?&month=${month}`)
+      .then(response => {
+        setData(response.data || []);
+        setCohort(id)
+      })
+      .catch(error => {
+        console.error("Error fetching user details:", error);
+      });
+  };
 
   const monthlyreport = (id) => {
     axios
-      .get(`https://regapp.vercel.app/monthlyreport/${id}`)
+      .get(`http://127.0.0.1:5002/monthlyreport/${id}`)
       .then(response => {
         setData(response.data || []);
       })
@@ -133,7 +148,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get(`https://regapp.vercel.app/learners`)
+      .get(`http://127.0.0.1:5002/learners`)
       .then(response => {
         if (response.data && response.data.length > 0) {
           setData(response.data);
@@ -163,12 +178,13 @@ export default function Main() {
     <div className='main-container21'>
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-          {currentPage === "page12" && <Page12/>}
-          {currentPage === "page13" && <Page13 cohorts={all} cohortsids={allids}/>}
+          {currentPage === "AddCohort" && <AddCohort/>}
+          {currentPage === "AddLearner" && <AddLearner cohorts={all} cohortsids={allids}/>}
           {currentPage === "calendar" &&    
             <div style={{ margin: '20px' }}>
                   <Calendar onChange={handleDateChange} value={date} className="custom-calendar" />
             </div>}
+          {currentPage === "ScanFace" && <ScanFace/>}
       </Modal> 
 
       <div className='flex-row21'>
@@ -188,15 +204,16 @@ export default function Main() {
                         setSearchQuery(e.target.value);
                         debouncedSearch();
                     }}/>
+            <a href="#" onClick={() => search()}><div class="search-icon"/></a>
+
             { <Content2 learners={multiArrayData}/>}
             
             { <Sidebar cohorts={all} counts = {counts} users={users} allids={allids} toogle={toggleCohort} isup={isUp}/> } 
-            <a href="#" onClick={() => search()}><div class="search-icon"/></a>
           </div>
 
         { <Add modal={handleOpenModal}/> }
         {/* { <ContentHeader/> } */}
-        { <Pagination />}
+        { <Pagination users={users}/>}
         <span className='cohort21' style={{ top: "100px" , left: "50px" }}>Manage Learners </span>
         <span className='cohort21'>Cohorts </span>
         <div className='rectangle-a21' />
