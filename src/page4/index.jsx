@@ -1,8 +1,6 @@
 import React from 'react';
 import './index.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import ScanFace from '../components/ScanFace/ScanFace'
-import Modal from '../components/Modal/Modal'
 
 export default function Main() {
   const location = useLocation();
@@ -11,8 +9,7 @@ export default function Main() {
   const navigate = useNavigate();
 
   const retry = () => {
-    // navigate('/Page1', { replace: true });
- 
+    navigate('/Page1', { replace: true });
   };
 
   const register = () => {
