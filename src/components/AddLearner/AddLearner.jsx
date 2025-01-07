@@ -6,6 +6,7 @@ import axios from 'axios';
 export default function Main({cohorts, cohortsids}) {
 
   const navigate = useNavigate();
+  
 
   const [formData, setFormData] = useState({
     name: '',

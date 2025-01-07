@@ -38,7 +38,7 @@ export default function Main() {
     if (isScanning) {
       try {
         const response = await axios.post(
-          'http://127.0.0.1:5002/recognize-face',
+          'http://localhost:5002/recognize-face',
           formData,
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );

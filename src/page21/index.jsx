@@ -80,7 +80,7 @@ export default function Main() {
 
   const delet = (id) => {
     axios
-      .delete(`http://127.0.0.1:5002/delet/${id}`)
+      .delete(`http://localhost:5002/delet/${id}`)
       .then(() => {
         setData(data.filter(user => user.id !== id));
       })
@@ -136,7 +136,7 @@ export default function Main() {
 
   const monthlyreport = (id) => {
     axios
-      .get(`http://127.0.0.1:5002/monthlyreport/${id}`)
+      .get(`http://localhost:5002/monthlyreport/${id}`)
       .then(response => {
         setData(response.data || []);
       })
@@ -148,7 +148,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5002/learners`)
+      .get(`http://localhost:5002/learners`)
       .then(response => {
         if (response.data && response.data.length > 0) {
           setData(response.data);

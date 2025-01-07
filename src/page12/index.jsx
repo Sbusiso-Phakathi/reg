@@ -25,7 +25,7 @@ export default function Main() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://127.0.0.1:5002/cohorts',  
+        'http://localhost:5002/cohorts',  
         formData,
         { headers: { 'Content-Type': 'multipart/form-data', "Cache-Control": "no-cache", } }
       );

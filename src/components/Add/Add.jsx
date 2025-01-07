@@ -9,7 +9,7 @@ const Add = ({ modal }) => {
                 onClick={() => modal("AddCohort")}
                     style={{ fontSize: '34px', border: 'none', left: "5px", color: "white", background: 'transparent', cursor: 'pointer' }}
                 >
-                    <span className='add-cohort21' style={{ left: "25px"}}>Signing</span>
+                    <span className='add-cohort21' style={{ left: "25px"}}>Add Cohort +</span>
                 </button>
                 </div>
 
@@ -18,7 +18,7 @@ const Add = ({ modal }) => {
                 onClick={() => modal("ScanFace")}
                     style={{ fontSize: '34px', border: 'none', left: "5px", color: "white", background: 'transparent', cursor: 'pointer' }}
                 >
-                    <span className='add-cohort21' style={{ left: "25px"}}>Add Cohort +</span>
+                    <span className='add-cohort21' style={{ left: "25px"}}>Signing</span>
                 </button>
                 </div>
 
