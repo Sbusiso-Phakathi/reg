@@ -16,4 +16,3 @@ const AdminIcon = () => {
 
 export default AdminIcon;
 
-3,5,7,17,18,23,26,27,27
