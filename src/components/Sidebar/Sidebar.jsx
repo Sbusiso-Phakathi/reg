@@ -1,6 +1,6 @@
 // src/components/Sidebar/Sidebar.js
 import React from 'react';
-import styles from './Sidebar.css';
+// import styles from './Sidebar.css';
 
 
 const Sidebar = ({ cohorts, counts, users, allids, toogle, isup }) => {

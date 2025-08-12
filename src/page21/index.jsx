@@ -67,7 +67,7 @@ export default function Main() {
     setDate(selectedDate);
     const formattedDate = selectedDate.toISOString().split('T')[0];
     try {
-      const response = await fetch(`http://localhost:5002/data?date=${formattedDate}&cohort=${cohort}`);
+      const response = await fetch(`http://156.38.173.36:5000/data?date=${formattedDate}&cohort=${cohort}`);
       const result = await response.json();
       setData(result); 
       setIsModalOpen(false)      
@@ -80,7 +80,7 @@ export default function Main() {
 
   const delet = (id) => {
     axios
-      .delete(`http://127.0.0.1:5002/delet/${id}`)
+      .delete(`http://156.38.173.36:5000/delet/${id}`)
       .then(() => {
         setData(data.filter(user => user.id !== id));
       })
@@ -92,7 +92,7 @@ export default function Main() {
   const search = async () => {
         setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5002/search`, {
+        const response = await axios.get(`http://156.38.173.36:5000/search`, {
           params: { query: searchQuery },
         });
         setData(response.data);
@@ -110,7 +110,7 @@ export default function Main() {
     setIsActive(true)
     setIdcohort(id)
     axios
-      .get(`http://localhost:5002/users?&id=${id}&month=${month}`)
+      .get(`http://156.38.173.36:5000/users?&id=${id}&month=${month}`)
       .then(response => {
         setData(response.data || []);
         setCohort(id)
@@ -124,7 +124,7 @@ export default function Main() {
     setIsActive(true)
     setIdcohort(id)
     axios
-      .get(`http://localhost:5002/users?&month=${month}`)
+      .get(`http://156.38.173.36:5000/users?&month=${month}`)
       .then(response => {
         setData(response.data || []);
         setCohort(id)
@@ -136,7 +136,7 @@ export default function Main() {
 
   const monthlyreport = (id) => {
     axios
-      .get(`http://127.0.0.1:5002/monthlyreport/${id}`)
+      .get(`http://156.38.173.36:5000/monthlyreport/${id}`)
       .then(response => {
         setData(response.data || []);
       })
@@ -148,7 +148,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:5002/learners`)
+      .get(`http://156.38.173.36:5000/learners`)
       .then(response => {
         if (response.data && response.data.length > 0) {
           setData(response.data);

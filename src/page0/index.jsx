@@ -31,7 +31,7 @@ export default function Main() {
   
       try {
         const response = await axios.post(
-          'http://127.0.0.1:5002/upload-image',  
+          'http://156.38.173.36:5000/upload-image',  
           formData,
           { headers: { 'Content-Type': 'multipart/form-data' } }
         );

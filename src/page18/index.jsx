@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch all dashboard data
-    axios.get("http://localhost:5002/attendance").then((response) => {
+    axios.get("http://156.38.173.36:5000/attendance").then((response) => {
       setDashboardData(response.data);
     });
   }, []);
