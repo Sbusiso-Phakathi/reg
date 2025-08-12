@@ -10,7 +10,7 @@ const Pagination = ({ users }) => {
           <span className='number-221'>Feb</span>
         </button>
         <button className='rectangle-1621'>
-          <span className='number-221'>Feb</span>
+          <span className='number-321'>Feb</span>
         </button>
         <button className='rectangle-1621'>
           <span className='number-221'>Feb</span>

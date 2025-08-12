@@ -151,7 +151,7 @@ export default function Main() {
       .get(`http://156.38.173.36:5000/learners`)
       .then(response => {
         if (response.data && response.data.length > 0) {
-          setData(response.data);
+          setData(response.data || []);
           setAll(response.data[0].all || []);
           setAllids(response.data[0].allids || []);
           setCounts(response.data[0].counts || []);
